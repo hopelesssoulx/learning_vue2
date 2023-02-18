@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Music</title>
+
+        <script src="../vue.js"></script>
+        <script src="../axios.min.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input v-model="search_word" @keyup.enter="search"/>
+            <audio ref="audio" :src="song_url" controls autoplay loop></audio>
+            <p v-for="i in list" @click="play_music(i.id)">{{i.name}}&nbsp;&nbsp;&nbsp;{{i.artists[0].name}}</p>
+        </div>
+    </body>
+</html>
+
+<script src="./index.js"></script>

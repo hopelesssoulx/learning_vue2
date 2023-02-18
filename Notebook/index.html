@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notebook</title>
+
+        <script src="../vue.js"></script>
+    </head>
+
+    <body>
+        <section id="todoapp">
+            <input v-model="inputValue" autocomplete="off"
+                placeholder="abaaba" @keyup.enter="add"/>
+
+            <ul>
+                <li v-for="(item, index) in list">
+                    <div>
+                        <span>{{index + 1}}</span>
+                        <label>{{item}}</label>
+                        <button class="del" @click="del(index)">del</button>
+                    </div>
+                </li>
+            </ul>
+
+            <p v-if="list.length != 0">item count: {{list.length}}</p>
+
+            <button @click="clear_all">clear all</button>
+        </section>
+    </body>
+</html>
+
+<script src="./index.js"></script>

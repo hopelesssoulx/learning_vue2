@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="../vue.min.js"></script>
+    <title>Intro</title>
+  </head>
+  
+  <body>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+      </span>
+    </div>
+
+    <div id="app-3">
+      <p v-if="seen">现在你看到我了</p>
+    </div>
+
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">反转消息</button>
+    </div>
+
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+
+    <div id="c">
+      <ol>
+        <!-- 创建一个 todo-item 组件的实例 -->
+        <ms-item
+        v-for="i in ms"
+        v-bind:ms="i"></todo-item>
+      </ol>
+    </div>
+  </body>
+</html>
+
+<script src="./Intro.js"></script>
